@@ -18,6 +18,11 @@
             }
             document.body.onclick = debounce(clickFunc.bind(window, 1), 500, true);
             document.onclick = debounce(clickFunc.bind(window, 1), 1000);
+
+            function scrollFunc() {
+                console.log("滚动了");
+            }
+            document.body.onscroll = throttle(scrollFunc.bind(window, 1), 500);
         </script>
     </body>
 </html>

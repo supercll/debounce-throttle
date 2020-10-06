@@ -18,3 +18,21 @@ function debounce(fn, wait = 500, im = false) {
         now && fn(...args);
     };
 }
+
+// 节流函数的思路：一段时间内只触发一次函数，节省不必要的消耗，例如页面滚动事件
+
+function throttle(fn, wait = 500) {
+    let timer = null;
+    let cd = true;
+
+    return function (...args) {
+        if (!cd) return;
+        fn(...args);
+        cd = false;
+        timer = setTimeout(() => {
+            clearTimeout(timer);
+            timer = null;
+            cd = true;
+        }, wait);
+    };
+}
