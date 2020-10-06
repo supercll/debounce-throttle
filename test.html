@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script src="index.js"></script>
+        <script>
+            function clickFunc() {
+                console.log("点击了");
+            }
+
+            document.body.click = debounce(clickFunc.bind(window, 1), 500, true);
+        </script>
+    </body>
+</html>
